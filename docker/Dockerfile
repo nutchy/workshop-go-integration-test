@@ -17,5 +17,5 @@ RUN go mod download
 COPY . .
 
 # Run tests and generate JUnit report
-# CMD go test -v ./... 2>&1 | go-junit-report -set-exit-code > test-report.xml
-CMD ["go", "test", "-v" ,"./..."]
+CMD go test -v ./... 2>&1 | go-junit-report -set-exit-code > test-report.xml
+# CMD ["go", "test", "-v" ,"./..."]
