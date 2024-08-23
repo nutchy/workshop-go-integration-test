@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1">
+	<testsuite name="workshop-go-integration-test/internal/pkg/todo" tests="1" failures="0" errors="0" id="0" hostname="59371745ec7e" time="0.003" timestamp="2024-08-23T18:01:10Z">
+		<testcase name="TestCreateTodo" classname="workshop-go-integration-test/internal/pkg/todo" time="0.000"></testcase>
+	</testsuite>
+</testsuites>

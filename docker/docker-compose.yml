@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb-1
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 1234abc
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
+  integration_test:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    environment:
+      MONGODB_URI: mongodb://admin:1234abc@mongodb:27017
+    depends_on:
+      - mongodb
