@@ -5,17 +5,9 @@ on:
 
 jobs:
   tests:
+    name: "Integration testing"
     runs-on: ubuntu-latest
     steps:
-      - uses: hoverkraft-tech/compose-action@v0.0.0
-        with:
-          # Description: Relative path to compose file(s). It can be a list of files.
-          #
-          # Default: ./docker-compose.yml
-          compose-file: "./docker/docker-compose.yml"
-      
-      
-          # Description: Additional options to pass to `docker-compose up` command.
-          #
-          # Default:
-          up-flags: "--build --abort-on-container-exit"
+      - uses: actions/checkout@v3
+      - name: "Set up environment"
+        run: docker compose -f docker/docker-compose.yml up --build --abort-on-container-exit
