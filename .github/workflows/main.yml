@@ -1,0 +1,21 @@
+name: workshop-go-integration-test
+on:
+  push:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hoverkraft-tech/compose-action@v0.0.0
+        with:
+          # Description: Relative path to compose file(s). It can be a list of files.
+          #
+          # Default: ./docker-compose.yml
+          compose-file: "./docker/docker-compose.yml"
+      
+      
+          # Description: Additional options to pass to `docker-compose up` command.
+          #
+          # Default:
+          up-flags: "--build --abort-on-container-exit"
