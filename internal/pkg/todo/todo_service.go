@@ -58,7 +58,12 @@ func NewService() service {
 		panic(err)
 	}
 
-	connStr := go_ora.BuildUrl("127.0.0.1", 1521, "XE", "system", "my_password", nil)
+	server := os.Getenv("ORACLE_HOST")
+	if server == "" {
+		server = "127.0.0.1"
+	}
+
+	connStr := go_ora.BuildUrl(server, 1521, "XE", "system", "my_password", nil)
 	conn, err := sql.Open("oracle", connStr)
 	// check for error
 	if err != nil {

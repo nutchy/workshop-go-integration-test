@@ -28,6 +28,7 @@ services:
       dockerfile: docker/Dockerfile
     environment:
       MONGODB_URI: mongodb://admin:1234abc@mongodb:27017
+      ORACLE_HOST: oracledb
     depends_on:
       - mongodb
       - oracledb
