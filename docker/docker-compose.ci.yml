@@ -14,6 +14,7 @@ services:
   
   oracledb:
     image: gvenzl/oracle-xe:latest
+    container_name: oracledb-1
     environment:
       - APP_USER=test_user
       - APP_USER_PASSWORD=my_password

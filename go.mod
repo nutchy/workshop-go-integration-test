@@ -4,6 +4,7 @@ go 1.22.3
 
 require (
 	github.com/google/uuid v1.6.0
+	github.com/sijms/go-ora/v2 v2.8.19
 	go.mongodb.org/mongo-driver v1.16.1
 )
 

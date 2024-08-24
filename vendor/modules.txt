@@ -15,6 +15,17 @@ github.com/klauspost/compress/zstd/internal/xxhash
 # github.com/montanaflynn/stats v0.7.1
 ## explicit; go 1.13
 github.com/montanaflynn/stats
+# github.com/sijms/go-ora/v2 v2.8.19
+## explicit; go 1.17
+github.com/sijms/go-ora/v2
+github.com/sijms/go-ora/v2/advanced_nego
+github.com/sijms/go-ora/v2/advanced_nego/ntlmssp
+github.com/sijms/go-ora/v2/configurations
+github.com/sijms/go-ora/v2/converters
+github.com/sijms/go-ora/v2/network
+github.com/sijms/go-ora/v2/network/security
+github.com/sijms/go-ora/v2/network/security/md4
+github.com/sijms/go-ora/v2/trace
 # github.com/xdg-go/pbkdf2 v1.0.0
 ## explicit; go 1.9
 github.com/xdg-go/pbkdf2

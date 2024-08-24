@@ -2,6 +2,7 @@ package todo
 
 import (
 	"context"
+	"database/sql"
 	"os"
 	"time"
 
@@ -9,6 +10,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
+
+	go_ora "github.com/sijms/go-ora/v2"
 )
 
 type repo interface {
@@ -52,6 +55,18 @@ func NewService() service {
 	}
 
 	if err := client.Ping(context.Background(), readpref.PrimaryPreferred()); err != nil {
+		panic(err)
+	}
+
+	connStr := go_ora.BuildUrl("127.0.0.1", 1521, "XE", "system", "my_password", nil)
+	conn, err := sql.Open("oracle", connStr)
+	// check for error
+	if err != nil {
+		panic(err)
+	}
+	err = conn.Ping()
+	// check for error
+	if err != nil {
 		panic(err)
 	}
 
