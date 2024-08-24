@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Set up environment"
-        run: docker compose -f docker/docker-compose.yml up --build --abort-on-container-exit
+        run: docker compose -f docker/docker-compose.ci.yml up --build --abort-on-container-exit

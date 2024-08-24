@@ -11,7 +11,7 @@ services:
       - "27017:27017"
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-
+  
   oracledb:
     image: gvenzl/oracle-xe:latest
     environment:
@@ -20,3 +20,13 @@ services:
       - ORACLE_PASSWORD=my_password
     ports:
       - 1521:1521
+
+  integration_test:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    environment:
+      MONGODB_URI: mongodb://admin:1234abc@mongodb:27017
+    depends_on:
+      - mongodb
+      - oracledb
